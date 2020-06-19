@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paste</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <%- include('partials/navbar'); -%>
+    <div class="container">
+        <h1>Post</h1><br>
+        <textarea name="" id="link" cols="40" rows="1"
+            readonly>localhost:2000/paste/<%= result[0].CryptoString %></textarea>
+        <button id="copyLink">Copy Link</button><br><br><br><br>
+        <textarea name="" id="text" cols="100" rows="10" readonly><%= result[0].Data %></textarea><br>
+        <button id="copyText">Copy Text</button>
+    </div>
+</body>
+<script>
+    document.getElementById("copyLink").onclick = function () {
+        document.getElementById("link").select();
+        document.execCommand('copy');
+    }
+    document.getElementById("copyText").onclick = function () {
+        document.getElementById("text").select();
+        document.execCommand('copy');
+    }
+
+</script>
+
+</html>

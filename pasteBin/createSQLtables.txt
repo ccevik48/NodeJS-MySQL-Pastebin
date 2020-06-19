@@ -1,0 +1,18 @@
+CREATE TABLE `USERS` (
+ `Id` int(11) NOT NULL AUTO_INCREMENT,
+ `Username` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+ `Email` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+ `Password` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+ PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+
+
+CREATE TABLE `POSTS` (
+ `Id` int(11) NOT NULL AUTO_INCREMENT,
+ `CryptoString` char(10) COLLATE utf8_unicode_ci NOT NULL,
+ `Data` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
+ `UserId` int(11) NOT NULL,
+ PRIMARY KEY (`Id`),
+ KEY `FK_POSTS_USERS` (`UserId`),
+ CONSTRAINT `FK_POSTS_USERS` FOREIGN KEY (`UserId`) REFERENCES `USERS` (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci

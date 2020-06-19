@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <%- include('partials/navbar'); -%>
+    <div class="container">
+        <h1>My Posts</h1>
+        Signed in as: <strong><%= sess.username %><br></strong>
+
+        my posts:<br><br>
+        <% if(result.length == 0){ %>
+            <p>There doesn't seem to be anything here.<br>
+                <a href="/upload">Add a new post</a>
+            </p>
+        <% } %>
+        <% for (var i = 0; i < result.length; i++) { %>
+        <textarea name="" id="link" cols="40" rows="1"
+            readonly>localhost:2000/paste/<%= result[i].CryptoString %></textarea><br>
+        <textarea name="" id="text" cols="100" rows="10" readonly><%= result[i].Data %></textarea><br>
+        <% } %>
+    </div>
+</body>
+
+</html>

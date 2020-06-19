@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <%- include('partials/navbar'); -%>
+    <div class="container">
+        <h1>New paste:</h1>
+        <form method="POST" action="/upload">
+            <div class="form-group">
+                </label><textarea name="pasteText" id="pasteText" cols="30" rows="10" class="form-control"
+                    placeholder="Paste you text here..."></textarea><br>
+                <input type="submit" value="upload">
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
