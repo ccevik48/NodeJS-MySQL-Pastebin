@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <%- include('partials/navbar'); -%>
+    <br>
+    <div class="container">
+    <p>
+        <strong>Id</strong>: <%= sess.uid %><br>
+        <strong>Email</strong>: <%= sess.email %><br>
+      </p>
+    <form method="GET" action="/postsOauth">
+        <button type="submit">Go to my posts</button>
+    </form>
+    <br>
+    <div class="container">
+        <a href="/logoutOauth" class="btn btn-danger"><span class="fa fa-google"></span> Sign out</a>
+      </div>
+    <!-- <form method="GET" action="/logout">
+        <button type="submit">Logout</button>
+    </form> -->
+    </div>
+    
+</body>
+</html>
